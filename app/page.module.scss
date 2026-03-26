@@ -1,0 +1,280 @@
+.page {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 64rem;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 16px 56px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.headerGrid {
+  display: grid;
+  width: 100%;
+  gap: 24px;
+}
+
+@media (min-width: 1024px) {
+  .headerGrid {
+    gap: 40px;
+    grid-template-columns: 1fr 340px;
+    align-items: start;
+  }
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--background) 40%, transparent);
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.pillDot {
+  height: 8px;
+  width: 8px;
+  border-radius: 999px;
+  background: var(--green-primary);
+}
+
+.lede {
+  margin-top: 16px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--foreground) 80%, transparent);
+}
+
+.summary {
+  margin-top: 24px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--foreground) 80%, transparent);
+}
+
+.actionsRow {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .actionsRow {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.primaryLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  background: color-mix(in srgb, #aaadc4 25%, transparent);
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #443627;
+  text-decoration: none;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(68, 54, 39, 0.15);
+  outline: none;
+}
+
+.primaryLink:hover {
+  background: color-mix(in srgb, #aaadc4 35%, transparent);
+}
+
+.primaryLink:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, #220c10 60%, transparent);
+}
+
+.externalMark {
+  color: color-mix(in srgb, #443627 70%, transparent);
+}
+
+.bold {
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.experienceLink {
+  background: color-mix(in srgb, #cb904d 25%, transparent);
+}
+
+.experienceLink:hover {
+  background: color-mix(in srgb, #cb904d 33%, transparent);
+}
+
+.experienceLink:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, #cb904d 60%, transparent);
+}
+
+.main {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.sectionGrid {
+  display: grid;
+  gap: 24px;
+}
+
+@media (min-width: 1024px) {
+  .sectionGrid {
+    grid-template-columns: 220px 1fr;
+  }
+}
+
+.sectionTitle {
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.sectionLead {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--foreground) 75%, transparent);
+}
+
+.bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.bulletRow {
+  display: flex;
+  gap: 16px;
+}
+
+.bulletDot {
+  margin-top: 8px;
+  height: 10px;
+  width: 10px;
+  border-radius: 999px;
+  background: var(--green-primary);
+  flex: 0 0 auto;
+}
+
+.bulletTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--foreground);
+  margin-top: 0;
+}
+
+.bulletText {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--foreground) 80%, transparent);
+}
+
+.projectsList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.projectCard {
+  border-radius: 24px;
+  background: var(--secondary-background);
+  padding: 20px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(68, 54, 39, 0.12);
+}
+
+.projectRow {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.projectTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.projectText {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--foreground) 80%, transparent);
+}
+
+.bulletDotAlt {
+  composes: bulletDot;
+  background: #cb904d;
+}
+
+.bulletDotInk {
+  composes: bulletDot;
+  background: #220c10;
+}
+
+.bulletDotWash {
+  composes: bulletDot;
+  background: #aaadc4;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 48px 24px 64px;
+  }
+
+  .lede {
+    font-size: 24px;
+  }
+
+  .summary {
+    font-size: 16px;
+  }
+
+  .main {
+    margin-top: 56px;
+    gap: 64px;
+  }
+
+  .sectionGrid {
+    gap: 40px;
+  }
+
+  .projectCard {
+    padding: 28px;
+  }
+
+  .projectRow {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+  }
+}
+
+

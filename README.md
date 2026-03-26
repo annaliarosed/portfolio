@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Annalia DeStefano
+Frontend Engineer (React, TypeScript)
+Tallinn, Estonia | Remote
+annaliadestefano@gmail.com | linkedin.com/in/annaliadestefano/
+Summary Senior Frontend Engineer with ~6 years of experience building accessible, high-quality React and TypeScript interfaces for SaaS and AI-driven products. Strong frontend ownership across design systems, UX improvements, accessibility, testing, and performance in complex, regulated environments.
+Work Experience
+Wise – Frontend Engineer Aug 2025 – Present
+● Led frontend implementation of analytics (Mixpanel) across internal tools, partnering with product stakeholders to define meaningful events.
+● Designed and built AI-assisted frontend workflows for financial crime operations.
+● Implemented frontend changes to meet requirements from major regulators, ensuring compliance across critical workflows.
+● Shipped UX improvements that reduced agent handling time by 24%.
+● Owned accessibility improvements, user research initiatives, and a shared design library, collaborating closely with product and design teams.
+Spawning – Frontend Engineer Mar 2023 – Mar 2025
+● Owned frontend development across multiple AI-related products and internal tools.
+● Built and redesigned “Have I Been Trained?”, improving accessibility by 53% and performance by 26%.
+● Reduced frontend production errors by 17% through improved testing practices.
+● Maintained a shared component library, increasing development speed by 23%.
+SpotHero – Frontend Engineer Mar 2022 – Mar 2023
+● Built frontend features across multiple SaaS product verticals.
+● Contributed to a V2 design system rollout, including component development and documentation.
+Spiff – Frontend Engineer Sep 2021 – Mar 2022 ● Led frontend work on customer-facing features. ● Supported migration to TypeScript and GraphQL. ● Improved ADA AA accessibility compliance by ~10%.
+Veriff – Frontend Engineer Jun 2019 – Sep 2021 ● Built internal tools for document verification, QA, and customer support. ● Strengthened and documented a shared design system. ● Shipped accessibility improvements and frontend GraphQL integrations.
+Skills Core: React, TypeScript, JavaScript, HTML, CSS Frontend: Accessibility (WCAG / ADA), Design Systems, Component Architecture, Performance Testing: Jest, React Testing Library State & Data: Redux, Apollo Client, GraphQL Tools: Storybook, Figma, GitHub, Jira Analytics: Mixpanel, Sentry
 
-## Getting Started
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+NOTES:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Source plus was shut down due to lack of funding, we open sourced the code and i did 99% of it: https://github.com/Spawning-Inc/source-plus-frontend
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Soundbraid was made by me for anthropologists who do experimental and molti modal work: http://soundbraid.org/# portfolio

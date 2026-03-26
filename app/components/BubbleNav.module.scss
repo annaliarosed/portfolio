@@ -1,0 +1,135 @@
+.wrap {
+  pointer-events: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 16px;
+  z-index: 40;
+  display: flex;
+  justify-content: center;
+  padding: 0 16px;
+}
+
+.desktopNav {
+  pointer-events: auto;
+  display: none;
+  align-items: center;
+  gap: 4px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--secondary-background) 90%, transparent);
+  padding: 8px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(68, 54, 39, 0.15);
+  backdrop-filter: blur(8px);
+}
+
+.link {
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--foreground) 80%, transparent);
+  text-decoration: none;
+  transition: background 140ms ease, color 140ms ease;
+  outline: none;
+}
+
+.link:hover {
+  background: color-mix(in srgb, var(--background) 70%, transparent);
+  color: var(--foreground);
+}
+
+.link:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--green-primary) 55%, transparent);
+}
+
+.active {
+  background: color-mix(in srgb, var(--green-primary) 18%, transparent);
+  color: var(--foreground);
+}
+
+.mobileWrap {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.menuButton {
+  border: 0;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--secondary-background) 95%, transparent);
+  padding: 12px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(68, 54, 39, 0.15);
+  outline: none;
+}
+
+.menuButton:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, #cb904d 60%, transparent);
+}
+
+.burgerLine {
+  display: block;
+  height: 1px;
+  width: 24px;
+  background: var(--green-primary);
+  transition: transform 160ms ease, opacity 160ms ease;
+  transform-origin: center;
+}
+
+.burgerLine + .burgerLine {
+  margin-top: 6px;
+}
+
+.burgerLineTopOpen {
+  transform: translateY(3.5px) rotate(45deg);
+}
+
+.burgerLineBottomOpen {
+  transform: translateY(-3.5px) rotate(-45deg);
+}
+
+.panel {
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--secondary-background) 95%, transparent);
+  padding: 8px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(68, 54, 39, 0.15);
+  backdrop-filter: blur(8px);
+}
+
+.panelList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 4px;
+}
+
+.panelLink {
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--foreground) 85%, transparent);
+  text-decoration: none;
+  outline: none;
+}
+
+.panelLink:hover {
+  background: color-mix(in srgb, var(--background) 70%, transparent);
+}
+
+.panelLink:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--green-primary) 55%, transparent);
+}
+
+@media (min-width: 768px) {
+  .desktopNav {
+    display: flex;
+  }
+  .mobileWrap {
+    display: none;
+  }
+}
+
