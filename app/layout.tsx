@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.scss";
-import LoadingOverlay from "@/app/components/LoadingOverlay";
 import BubbleNav from "@/app/components/BubbleNav";
 import RevealOnScroll from "@/app/components/RevealOnScroll";
 
@@ -39,7 +38,6 @@ export default function RootLayout({
           Skip to content
         </a>
         <BubbleNav />
-        <LoadingOverlay />
         <RevealOnScroll />
         {children}
       </body>
