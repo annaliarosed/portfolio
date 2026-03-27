@@ -95,27 +95,27 @@
   align-items: center;
   gap: 8px;
   border-radius: 999px;
-  background: color-mix(in srgb, #aaadc4 25%, transparent);
+  background: color-mix(in srgb, var(--accent-cool) 25%, transparent);
   padding: 8px 16px;
   font-size: 14px;
   font-weight: 600;
-  color: #443627;
+  color: var(--foreground);
   text-decoration: none;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(68, 54, 39, 0.15);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
   outline: none;
 }
 
 .primaryLink:hover {
-  background: color-mix(in srgb, #aaadc4 35%, transparent);
+  background: color-mix(in srgb, var(--accent-cool) 35%, transparent);
 }
 
 .primaryLink:focus-visible {
-  box-shadow: 0 0 0 3px color-mix(in srgb, #220c10 60%, transparent);
+  box-shadow: 0 0 0 3px var(--focus-ring);
 }
 
 .externalMark {
-  color: color-mix(in srgb, #443627 70%, transparent);
+  color: color-mix(in srgb, var(--foreground) 70%, transparent);
 }
 
 .bold {
@@ -124,15 +124,15 @@
 }
 
 .experienceLink {
-  background: color-mix(in srgb, #cb904d 25%, transparent);
+  background: color-mix(in srgb, var(--accent-warm) 25%, transparent);
 }
 
 .experienceLink:hover {
-  background: color-mix(in srgb, #cb904d 33%, transparent);
+  background: color-mix(in srgb, var(--accent-warm) 33%, transparent);
 }
 
 .experienceLink:focus-visible {
-  box-shadow: 0 0 0 3px color-mix(in srgb, #cb904d 60%, transparent);
+  box-shadow: 0 0 0 3px var(--focus-ring);
 }
 
 .main {
@@ -210,8 +210,8 @@
   border-radius: 24px;
   background: var(--secondary-background);
   padding: 20px;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(68, 54, 39, 0.12);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
 }
 
 .projectRow {
@@ -228,15 +228,15 @@
 }
 
 .caseStudyLink {
-  background: color-mix(in srgb, #cb904d 25%, transparent);
+  background: color-mix(in srgb, var(--accent-warm) 25%, transparent);
 }
 
 .caseStudyLink:hover {
-  background: color-mix(in srgb, #cb904d 33%, transparent);
+  background: color-mix(in srgb, var(--accent-warm) 33%, transparent);
 }
 
 .caseStudyLink:focus-visible {
-  box-shadow: 0 0 0 3px color-mix(in srgb, #cb904d 60%, transparent);
+  box-shadow: 0 0 0 3px var(--focus-ring);
 }
 
 .projectTitle {
@@ -258,7 +258,7 @@
   width: 10px;
   border-radius: 999px;
   flex: 0 0 auto;
-  background: #cb904d;
+  background: var(--accent-warm);
 }
 
 .bulletDotInk {
@@ -267,7 +267,7 @@
   width: 10px;
   border-radius: 999px;
   flex: 0 0 auto;
-  background: #220c10;
+  background: var(--ink);
 }
 
 .bulletDotWash {
@@ -276,7 +276,7 @@
   width: 10px;
   border-radius: 999px;
   flex: 0 0 auto;
-  background: #aaadc4;
+  background: var(--accent-cool);
 }
 
 @media (min-width: 640px) {

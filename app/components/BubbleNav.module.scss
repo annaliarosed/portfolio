@@ -92,7 +92,7 @@
 }
 
 .menuButton:focus-visible {
-  box-shadow: 0 0 0 3px color-mix(in srgb, #cb904d 60%, transparent);
+  box-shadow: 0 0 0 3px var(--focus-ring);
 }
 
 .burgerLine {
@@ -124,8 +124,8 @@
   border-radius: 12px;
   background: color-mix(in srgb, var(--secondary-background) 98%, transparent);
   padding: 6px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
-  border: 1px solid rgba(68, 54, 39, 0.18);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
   backdrop-filter: blur(8px);
   z-index: 2;
 }
@@ -154,6 +154,7 @@
 .panelLink:focus-visible {
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--green-primary) 55%, transparent);
 }
+
 
 @media (min-width: 768px) {
   .desktopNav {

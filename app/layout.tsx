@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.scss";
 import BubbleNav from "@/app/components/BubbleNav";
 import RevealOnScroll from "@/app/components/RevealOnScroll";
+import ThemeToggle from "@/app/components/ThemeToggle";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,11 +26,25 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const themeInitScript = `
+    (function() {
+      try {
+        var stored = localStorage.getItem("theme");
+        if (stored === "light" || stored === "dark") {
+          document.documentElement.setAttribute("data-theme", stored);
+        }
+      } catch (e) {}
+    })();
+  `;
+
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body>
         <a
           href="#about"
@@ -40,6 +55,7 @@ export default function RootLayout({
         <BubbleNav />
         <RevealOnScroll />
         {children}
+        <ThemeToggle />
       </body>
     </html>
   );

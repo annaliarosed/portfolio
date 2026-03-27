@@ -2,8 +2,8 @@
   border-radius: 16px;
   background: var(--secondary-background);
   padding: 20px;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(68, 54, 39, 0.15);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
 }
 
 @media (min-width: 640px) {

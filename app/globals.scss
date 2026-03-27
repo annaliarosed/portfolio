@@ -1,15 +1,64 @@
 :root {
-  --background: #FBF9F4;
+  /* Theme tokens (default: light) */
+  --background: #fbf9f4;
   --secondary-background: #fcfaf7;
   --foreground: #443627;
+
+  /* Accents */
   --green-primary: #5c946e;
+  --accent-warm: #cb904d;
+  --accent-cool: #aaadc4;
+  --ink: #220c10;
+
+  /* UI primitives */
+  --border: color-mix(in srgb, var(--foreground) 16%, transparent);
+  --border-strong: color-mix(in srgb, var(--foreground) 28%, transparent);
+  --shadow-sm: 0 1px 0 rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.10);
+  --focus-ring: color-mix(in srgb, var(--accent-warm) 60%, transparent);
+
+  /* Form controls / UA widgets */
+  color-scheme: light;
 }
 
+html[data-theme="dark"] {
+  --background: #0f1115;
+  --secondary-background: #151923;
+  --foreground: #f3f4f6;
+
+  --green-primary: #7ddfa6;
+  --accent-warm: #f2b36a;
+  --accent-cool: #b9bdd8;
+  --ink: #0b0d12;
+
+  --border: color-mix(in srgb, var(--foreground) 18%, transparent);
+  --border-strong: color-mix(in srgb, var(--foreground) 30%, transparent);
+  --shadow-sm: 0 1px 0 rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 14px 40px rgba(0, 0, 0, 0.55);
+  --focus-ring: color-mix(in srgb, var(--green-primary) 55%, transparent);
+
+  color-scheme: dark;
+}
+
+/* If the user hasn't chosen, follow OS preference. */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #FBF9F4;
-    /* keep your current choice */
-    --foreground: #443627;
+  html:not([data-theme]) {
+    --background: #0f1115;
+    --secondary-background: #151923;
+    --foreground: #f3f4f6;
+
+    --green-primary: #7ddfa6;
+    --accent-warm: #f2b36a;
+    --accent-cool: #b9bdd8;
+    --ink: #0b0d12;
+
+    --border: color-mix(in srgb, var(--foreground) 18%, transparent);
+    --border-strong: color-mix(in srgb, var(--foreground) 30%, transparent);
+    --shadow-sm: 0 1px 0 rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 14px 40px rgba(0, 0, 0, 0.55);
+    --focus-ring: color-mix(in srgb, var(--green-primary) 55%, transparent);
+
+    color-scheme: dark;
   }
 }
 
@@ -82,12 +131,12 @@ body {
   white-space: normal !important;
 
   border-radius: 999px;
-  background: #220c10;
+  background: var(--ink);
   padding: 8px 16px;
   font-size: 14px;
   font-weight: 600;
-  color: #aaadc4;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+  color: var(--accent-cool);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.30);
 }
 
 section[data-chapter] {

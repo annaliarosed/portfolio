@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { profile } from "@/app/lib/profile";
 import Card from "@/app/components/Card";
 import styles from "./page.module.scss";
@@ -22,9 +21,7 @@ export default function ExperiencePage() {
           </p>
 
           <div className={styles.actions}>
-            <Link href="/" className={[styles.pillLink, styles.back].join(" ")}>
-              Back to home
-            </Link>
+
             <a
               href={`mailto:${profile.email}`}
               className={[styles.pillLink, styles.email].join(" ")}
