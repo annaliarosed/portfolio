@@ -26,13 +26,26 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   const themeInitScript = `
     (function() {
       try {
         var stored = localStorage.getItem("theme");
-        if (stored === "light" || stored === "dark") {
-          document.documentElement.setAttribute("data-theme", stored);
+        var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        var resolved = (stored === "light" || stored === "dark") ? stored : (prefersDark ? "dark" : "light");
+
+        var root = document.documentElement;
+        root.style.colorScheme = resolved;
+        if (resolved === "dark") {
+          root.style.backgroundColor = "#0f1115";
+          root.style.color = "#f3f4f6";
+        } else {
+          root.style.backgroundColor = "#fbf9f4";
+          root.style.color = "#443627";
         }
+
+        // Set attribute for both: keeps CSS variables consistent immediately.
+        root.setAttribute("data-theme", resolved);
       } catch (e) {}
     })();
   `;
@@ -41,6 +54,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable}`}
+      suppressHydrationWarning
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />

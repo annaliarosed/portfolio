@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useSyncExternalStore } from "react";
 import styles from "./ThemeToggle.module.scss";
 
 type Theme = "light" | "dark";
@@ -23,6 +23,26 @@ function resolveTheme(): Theme {
 function setTheme(next: Theme) {
   document.documentElement.setAttribute("data-theme", next);
   window.localStorage.setItem("theme", next);
+  // Notify any subscribers in this tab.
+  window.dispatchEvent(new Event("themechange"));
+}
+
+function subscribeTheme(onStoreChange: () => void) {
+  const onThemeChange = () => onStoreChange();
+  window.addEventListener("themechange", onThemeChange);
+  window.addEventListener("storage", onThemeChange);
+  return () => {
+    window.removeEventListener("themechange", onThemeChange);
+    window.removeEventListener("storage", onThemeChange);
+  };
+}
+
+function getThemeSnapshot(): Theme {
+  return resolveTheme();
+}
+
+function getThemeServerSnapshot(): Theme {
+  return "light";
 }
 
 function SunIcon() {
@@ -60,7 +80,11 @@ function MoonIcon() {
 }
 
 export default function ThemeToggle() {
-  const [theme, setThemeState] = useState<Theme>(() => resolveTheme());
+  const theme = useSyncExternalStore(
+    subscribeTheme,
+    getThemeSnapshot,
+    getThemeServerSnapshot
+  );
 
   const nextTheme: Theme = theme === "dark" ? "light" : "dark";
   const tooltip = `Switch to ${nextTheme} mode`;
@@ -73,12 +97,17 @@ export default function ThemeToggle() {
         const resolved = resolveTheme();
         const next: Theme = resolved === "dark" ? "light" : "dark";
         setTheme(next);
-        setThemeState(next);
       }}
       aria-label={tooltip}
       data-tooltip={tooltip}
+      suppressHydrationWarning
     >
-      {nextTheme === "dark" ? <MoonIcon /> : <SunIcon />}
+      <span className={styles.iconSun}>
+        <SunIcon />
+      </span>
+      <span className={styles.iconMoon}>
+        <MoonIcon />
+      </span>
     </button>
   );
 }

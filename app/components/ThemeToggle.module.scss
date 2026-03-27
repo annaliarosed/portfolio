@@ -35,6 +35,22 @@
   box-shadow: 0 0 0 3px var(--focus-ring), var(--shadow-md);
 }
 
+.iconSun,
+.iconMoon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Show the icon for the *current* theme (CSS reads html[data-theme]) */
+:global(html[data-theme="dark"]) .fab .iconSun {
+  display: none;
+}
+
+:global(html[data-theme="light"]) .fab .iconMoon {
+  display: none;
+}
+
 /* Tooltip */
 .fab::after {
   content: attr(data-tooltip);
