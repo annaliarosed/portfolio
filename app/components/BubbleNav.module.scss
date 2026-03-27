@@ -45,7 +45,7 @@
 
 .link {
   padding: 8px 12px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   color: color-mix(in srgb, var(--foreground) 80%, transparent);
   text-decoration: none;
@@ -103,7 +103,7 @@
   border-radius: 999px;
 }
 
-.burgerLine + .burgerLine {
+.burgerLine+.burgerLine {
   margin-top: 6px;
 }
 
