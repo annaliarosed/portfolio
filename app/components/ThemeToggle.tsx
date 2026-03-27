@@ -23,7 +23,6 @@ function resolveTheme(): Theme {
 function setTheme(next: Theme) {
   document.documentElement.setAttribute("data-theme", next);
   window.localStorage.setItem("theme", next);
-  // Notify any subscribers in this tab.
   window.dispatchEvent(new Event("themechange"));
 }
 

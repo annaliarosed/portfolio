@@ -19,12 +19,18 @@ export default function BubbleNav() {
   const buttonRef = useRef<HTMLButtonElement | null>(null);
   const panelRef = useRef<HTMLDivElement | null>(null);
   const pathname = usePathname();
+  const didMountRef = useRef(false);
 
   const handleTabClick = () => {
     setOpen(false);
   };
 
   useEffect(() => {
+    if (!didMountRef.current) {
+      didMountRef.current = true;
+      return;
+    }
+
     // Close menu on route change and reset scroll.
     // If a hash is present, scroll to the anchored element instead of forcing top.
     const id = window.setTimeout(() => {

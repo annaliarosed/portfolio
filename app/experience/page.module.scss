@@ -144,7 +144,11 @@
   height: 10px;
   width: 10px;
   border-radius: 999px;
-  background: var(--accent-warm);
+  background: var(--ink);
   flex: 0 0 auto;
+}
+
+:global(html[data-theme="dark"]) .dot {
+  background: var(--accent-warm);
 }
 
