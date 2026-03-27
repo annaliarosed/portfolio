@@ -1,9 +1,10 @@
 import type { ReactNode } from "react";
 import InteractiveSkills from "@/app/components/InteractiveSkills";
-import Link from "next/link";
+
 import { profile } from "@/app/lib/profile";
 import Card from "@/app/components/Card";
 import styles from "./page.module.scss";
+import Link from "next/link";
 
 function ExternalLink({
   href,
@@ -31,22 +32,52 @@ function ExternalLink({
 }
 
 export default function Home() {
+  const homeProjects = [
+    {
+      title: "Source.Plus",
+      description:
+        "Platform for curating and licensing AI training datasets with a search-first user experience.",
+      externalHref: "https://github.com/Spawning-Inc/source-plus-frontend",
+      externalLabel: "GitHub",
+      caseStudyHref: "/projects#source-plus",
+      caseStudyLabel: "View case study",
+    },
+    {
+      title: "Dundee Daily News",
+      description:
+        "A full-stack web application for local news, developed in collaboration with a designer to bring a community-focused platform to life.",
+      externalHref: "https://github.com/annaliarosed/Dundee-daily-news",
+      externalLabel: "GitHub",
+      caseStudyHref: "/projects#dundee-daily-news",
+      caseStudyLabel: "View case study",
+    },
+    {
+      title: "SoundBraid",
+      description:
+        "A web platform designed as a space for multimodal, experimental anthropological work—sonic, visual, and textual materials treated as equal parts of meaning.",
+      externalHref: "http://soundbraid.org/",
+      externalLabel: "Live site",
+      caseStudyHref: "/projects#soundbraid",
+      caseStudyLabel: "View case study",
+    },
+  ] as const;
+
   return (
     <div className={styles.page}>
       <div className={styles.container}>
         <header className={styles.header}>
           <Card className="p-10">
             <div className={styles.headerGrid}>
-                <h1 className={styles.lede}>
-                  I’m{" "}
-                  <span className={styles.bold}>{profile.name}</span>, a{" "}
-                  <span className={styles.bold}>{profile.title}</span> based in{" "}
-                  <span className={styles.bold}>{profile.location}</span>.
-                </h1>
+              <h1 className={styles.lede}>
+                I’m{" "}
+                <span className={styles.bold}>{profile.name}</span>, a{" "}
+                <span className={styles.bold}>{profile.title}</span> based in{" "}
+                <span className={styles.bold}>{profile.location}</span>.
+              </h1>
 
-                <p className={styles.summary}>
-                  {profile.summary}
-                </p>
+              <p className={styles.summary}>
+                {profile.summary}
+              </p>
 
 
             </div>
@@ -69,7 +100,7 @@ export default function Home() {
         <main className={styles.main}>
           <section aria-labelledby="about-title" id="about" data-chapter>
             <Card className="p-10">
-              
+
               <div className={styles.sectionGrid}>
                 <div>
                   <h2
@@ -168,12 +199,12 @@ export default function Home() {
                     Projects & notes
                   </h2>
                   <p className={styles.sectionLead}>
-                    Two standout pieces—from open source to multimodal experiments.
+                    Case studies and experiments—from open source to community products.
                   </p>
                 </div>
 
                 <div className={styles.projectsList}>
-                  {profile.projects.map((p) => (
+                  {homeProjects.map((p) => (
                     <article
                       key={p.title}
                       className={styles.projectCard}
@@ -187,8 +218,14 @@ export default function Home() {
                             {p.description}
                           </p>
                         </div>
-                        <div className="shrink-0">
-                          <ExternalLink href={p.href}>{p.linkLabel}</ExternalLink>
+                        <div className={styles.projectActions}>
+                          <a
+                            href={p.caseStudyHref}
+                            className={[styles.primaryLink, styles.caseStudyLink].join(" ")}
+                          >
+                            {p.caseStudyLabel}
+                          </a>
+                          <ExternalLink href={p.externalHref}>{p.externalLabel}</ExternalLink>
                         </div>
                       </div>
                     </article>
@@ -208,11 +245,11 @@ export default function Home() {
                   >
                     Get in touch
                   </h2>
-              
+
                 </div>
 
                 <div className={styles.projectCard}>
-                  
+
                   <div className={styles.actions} style={{ marginTop: 24 }}>
                     <ExternalLink href={`mailto:${profile.email}`}>Email</ExternalLink>
                     <ExternalLink href={profile.linkedin}>LinkedIn</ExternalLink>
@@ -224,7 +261,7 @@ export default function Home() {
           </section>
         </main>
 
-       
+
       </div>
     </div>
   );

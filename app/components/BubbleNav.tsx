@@ -26,8 +26,18 @@ export default function BubbleNav() {
 
   useEffect(() => {
     // Close menu on route change and reset scroll.
+    // If a hash is present, scroll to the anchored element instead of forcing top.
     const id = window.setTimeout(() => {
       setOpen(false);
+      const hash = window.location.hash;
+      if (hash) {
+        const idFromHash = hash.slice(1).split("#")[0];
+        const target = document.getElementById(idFromHash);
+        if (target) {
+          target.scrollIntoView({ block: "start", behavior: "auto" });
+          return;
+        }
+      }
       window.scrollTo({ top: 0, behavior: "auto" });
     }, 0);
     return () => window.clearTimeout(id);

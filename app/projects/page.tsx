@@ -103,6 +103,41 @@ export default function ProjectsPage() {
         },
     ];
 
+    const soundbraidTags = [
+        "React",
+        "TypeScript",
+        "UI/UX",
+        "Multimodal Content",
+        "Accessibility",
+    ];
+
+    const soundbraidContributions = [
+        "Designed and implemented the full frontend experience.",
+        "Translated abstract research concepts into usable interface patterns.",
+        "Structured multimodal content (audio, text, visuals) so each modality felt primary—not supplementary.",
+        "Iterated on layout and interaction to support exploration rather than linear reading.",
+        "Worked closely with an anthropologist to align interface behavior with research intent.",
+    ];
+
+    const soundbraidFeatures = [
+        {
+            title: "Multimodal content structure",
+            body: "Flexible UI patterns for presenting audio, text, and images side-by-side without forcing a single reading order.",
+        },
+        {
+            title: "Exploratory navigation",
+            body: "Navigation patterns that encourage wandering, revisiting, and associative jumps over strict hierarchy.",
+        },
+        {
+            title: "Layering & juxtaposition layouts",
+            body: "Custom layouts designed to support fragmented and evolving research outputs through collage-like composition.",
+        },
+        {
+            title: "Responsive listening-first UI",
+            body: "Interfaces optimized for both visual and audio-based interaction across mobile and desktop.",
+        },
+    ];
+
     return (
         <main className={styles.main}>
 
@@ -110,6 +145,7 @@ export default function ProjectsPage() {
                 <nav className={styles.projectNav}>
                     <Link href="#source-plus" className={styles.projectNavLink}>Source.Plus</Link>
                     <Link href="#dundee-daily-news" className={styles.projectNavLink}>Dundee Daily News</Link>
+                    <Link href="#soundbraid" className={styles.projectNavLink}>Sound braid</Link>
                 </nav>
                 <header className={styles.hero} aria-labelledby="project-title" id="source-plus">
                     <p className={styles.kicker}>Case Study</p>
@@ -263,13 +299,7 @@ export default function ProjectsPage() {
                     </p>
                 </Section>
 
-                <Section id="future" title="Improvements / Future Work">
-                    <ul className={styles.bulletList}>
-                        <li className={styles.bulletItem}>Expand accessibility audits for complex filter/search flows and edge-case keyboard navigation.</li>
-                        <li className={styles.bulletItem}>Optimize bundle and interaction performance in data-heavy screens through deeper code splitting.</li>
-                        <li className={styles.bulletItem}>Evolve the design system with stronger tokens, docs, and visual regression coverage.</li>
-                    </ul>
-                </Section>
+
 
                 <header className={`${styles.hero} ${styles.caseStudySpacer}`} aria-labelledby="dundee-title" id="dundee-daily-news">
                     <p className={styles.kicker}>Case Study</p>
@@ -419,13 +449,128 @@ export default function ProjectsPage() {
                     </p>
                 </Section>
 
-                <Section id="dundee-future" title="Improvements / Future Work">
+
+                <header className={`${styles.hero} ${styles.caseStudySpacer}`} aria-labelledby="soundbraid-title" id="soundbraid">
+                    <p className={styles.kicker}>Case Study</p>
+                    <h1 id="soundbraid-title" className={`k-title ${styles.title}`}>
+                        Sound braid
+                    </h1>
+                    <p className={styles.subtitle}>
+                        A web platform for multimodal, experimental anthropological work—sonic, visual, and textual materials treated as equal parts of meaning.
+                    </p>
+
+                    <div className={styles.metaRow}>
+                        <div>
+                            <span className={styles.metaLabel}>Role</span>
+                            <p className={styles.metaValue}>Designer + Frontend Engineer</p>
+                        </div>
+                        <div className={styles.linkGroup}>
+                            <a
+                                href="http://soundbraid.org/"
+                                target="_blank"
+                                rel="noreferrer"
+                                className={styles.topLink}
+                            >
+                                Live site
+                            </a>
+                        </div>
+                    </div>
+
+                    <ul className={styles.tagList} aria-label="SoundBraid tags">
+                        {soundbraidTags.map((tag) => (
+                            <li key={tag} className={styles.tag}>
+                                {tag}
+                            </li>
+                        ))}
+                    </ul>
+                </header>
+
+
+
+                <Section id="soundbraid-overview" title="Overview">
+                    <p className={styles.paragraph}>
+                        SoundBraid is a web platform designed as a space for multimodal, experimental anthropological work. It hosts and
+                        interweaves sonic, visual, and textual materials in a way that moves beyond traditional academic formats—treating
+                        audio as central to how knowledge is created and experienced, not a secondary attachment.
+                    </p>
+                </Section>
+
+                <Section id="soundbraid-concept" title="Concept & Challenge">
+                    <p className={styles.paragraph}>
+                        The goal wasn’t a standard content site, but a space that reflects non-linear, sensory, exploratory knowledge-making.
+                        The interface needed to support ambiguity and exploration—helping users “move through” content rather than consume it
+                        in a single, linear reading path.
+                    </p>
+                </Section>
+
+                <Section id="soundbraid-contributions" title="My Role & Contributions">
                     <ul className={styles.bulletList}>
-                        <li className={styles.bulletItem}>Introduce stronger editorial tooling for recurring content operations.</li>
-                        <li className={styles.bulletItem}>Expand accessibility checks for long-form reading and keyboard-only navigation.</li>
-                        <li className={styles.bulletItem}>Add performance budgets and image optimization for media-heavy stories.</li>
+                        {soundbraidContributions.map((item) => (
+                            <li key={item} className={styles.bulletItem}>
+                                {item}
+                            </li>
+                        ))}
                     </ul>
                 </Section>
+
+                <Section id="soundbraid-stack" title="Tech Stack">
+                    <ul className={styles.stackGrid}>
+                        {soundbraidTags.map((item) => (
+                            <li key={item} className={styles.stackItem}>
+                                {item}
+                            </li>
+                        ))}
+                    </ul>
+                </Section>
+
+                <Section id="soundbraid-features" title="Key Features">
+                    <div className={styles.featureGrid}>
+                        {soundbraidFeatures.map((feature) => (
+                            <article key={feature.title} className={styles.featureCard}>
+                                <h3 className={styles.featureTitle}>{feature.title}</h3>
+                                <p className={styles.featureText}>{feature.body}</p>
+                            </article>
+                        ))}
+                    </div>
+                </Section>
+
+                <Section id="soundbraid-architecture" title="Architecture / Technical Details">
+                    <div className={styles.detailGrid}>
+                        <div className={styles.detailCard}>
+                            <h3 className={styles.detailTitle}>Interaction model</h3>
+                            <p className={styles.detailText}>
+                                Designed for slower, more reflective engagement—supporting spatial thinking and revisiting, rather than optimizing only for speed.
+                            </p>
+                        </div>
+                        <div className={styles.detailCard}>
+                            <h3 className={styles.detailTitle}>Multimodal balance</h3>
+                            <p className={styles.detailText}>
+                                Layouts and information hierarchy ensured audio, text, and imagery shared equal weight, avoiding “audio as garnish.”
+                            </p>
+                        </div>
+                        <div className={styles.detailCard}>
+                            <h3 className={styles.detailTitle}>Responsive content composition</h3>
+                            <p className={styles.detailText}>
+                                Components adapt to screen size without collapsing the concept—preserving juxtaposition and layered relationships across devices.
+                            </p>
+                        </div>
+                        <div className={styles.detailCard}>
+                            <h3 className={styles.detailTitle}>Accessibility considerations</h3>
+                            <p className={styles.detailText}>
+                                Built with readable typography, clear focus states, and interaction patterns that work with keyboard and assistive tech for exploration flows.
+                            </p>
+                        </div>
+                    </div>
+                </Section>
+
+                <Section id="soundbraid-outcome" title="Outcome / Reflection">
+                    <p className={styles.paragraph}>
+                        SoundBraid proved that research-driven digital experiences can be both conceptually faithful and usable. The work sharpened my ability to
+                        translate abstract ideas into interaction design, and to build content systems that invite exploration without losing clarity.
+                    </p>
+                </Section>
+
+
             </article>
         </main>
     );

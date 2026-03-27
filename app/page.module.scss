@@ -220,6 +220,25 @@
   gap: 16px;
 }
 
+.projectActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.caseStudyLink {
+  background: color-mix(in srgb, #cb904d 25%, transparent);
+}
+
+.caseStudyLink:hover {
+  background: color-mix(in srgb, #cb904d 33%, transparent);
+}
+
+.caseStudyLink:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, #cb904d 60%, transparent);
+}
+
 .projectTitle {
   font-size: 16px;
   font-weight: 600;
@@ -234,17 +253,29 @@
 }
 
 .bulletDotAlt {
-  composes: bulletDot;
+  margin-top: 8px;
+  height: 10px;
+  width: 10px;
+  border-radius: 999px;
+  flex: 0 0 auto;
   background: #cb904d;
 }
 
 .bulletDotInk {
-  composes: bulletDot;
+  margin-top: 8px;
+  height: 10px;
+  width: 10px;
+  border-radius: 999px;
+  flex: 0 0 auto;
   background: #220c10;
 }
 
 .bulletDotWash {
-  composes: bulletDot;
+  margin-top: 8px;
+  height: 10px;
+  width: 10px;
+  border-radius: 999px;
+  flex: 0 0 auto;
   background: #aaadc4;
 }
 
