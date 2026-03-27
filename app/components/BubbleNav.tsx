@@ -10,6 +10,7 @@ type NavItem = { href: string; label: string };
 const ITEMS: NavItem[] = [
   { href: "/", label: "Home" },
   { href: "/experience", label: "Experience" },
+  { href: "/projects", label: "Projects" },
 ];
 
 export default function BubbleNav() {
@@ -19,9 +20,16 @@ export default function BubbleNav() {
   const panelRef = useRef<HTMLDivElement | null>(null);
   const pathname = usePathname();
 
+  const handleTabClick = () => {
+    setOpen(false);
+  };
+
   useEffect(() => {
-    // Close menu on route change (mobile).
-    const id = window.setTimeout(() => setOpen(false), 0);
+    // Close menu on route change and reset scroll.
+    const id = window.setTimeout(() => {
+      setOpen(false);
+      window.scrollTo({ top: 0, behavior: "auto" });
+    }, 0);
     return () => window.clearTimeout(id);
   }, [pathname]);
 
@@ -89,6 +97,10 @@ export default function BubbleNav() {
 
   return (
     <div className={styles.wrap}>
+      <Link href="/" className={styles.brand} aria-label="Annalia DeStefano">
+        <span className={styles.brandVertical}>ANNALIA</span>
+        <span className={styles.brandHorizontal}>DESTEFANO</span>
+      </Link>
       {/* Desktop: always-visible pill nav */}
       <nav
         aria-label="Primary"
@@ -97,12 +109,14 @@ export default function BubbleNav() {
         {ITEMS.map((it) => {
           const isActive =
             (it.href === "/" && pathname === "/") ||
-            (it.href === "/experience" && pathname === "/experience");
+            (it.href === "/experience" && pathname === "/experience") ||
+            (it.href === "/projects" && pathname === "/projects");
           return (
             <Link
               key={it.href}
               href={it.href}
               aria-current={isActive ? "page" : undefined}
+              onClick={handleTabClick}
               className={[
                 styles.link,
                 isActive ? styles.active : "",
@@ -123,17 +137,22 @@ export default function BubbleNav() {
           aria-expanded={open}
           aria-controls={panelId}
           onClick={() => setOpen((v) => !v)}
-          className={styles.menuButton}
+          className={[
+            styles.menuButton,
+            open ? styles.menuButtonOpen : "",
+          ].join(" ")}
         >
           <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
-          <span
-            aria-hidden="true"
-            className={[styles.burgerLine, open ? styles.burgerLineTopOpen : ""].join(" ")}
-          />
-          <span
-            aria-hidden="true"
-            className={[styles.burgerLine, open ? styles.burgerLineBottomOpen : ""].join(" ")}
-          />
+          {open ? (
+            <span aria-hidden="true" className={styles.mobileX}>
+              ×
+            </span>
+          ) : (
+            <>
+              <span aria-hidden="true" className={styles.burgerLine} />
+              <span aria-hidden="true" className={styles.burgerLine} />
+            </>
+          )}
         </button>
 
         {open ? (
@@ -150,7 +169,7 @@ export default function BubbleNav() {
                   key={it.href}
                   href={it.href}
                   className={styles.panelLink}
-                  onClick={() => setOpen(false)}
+                  onClick={handleTabClick}
                 >
                   {it.label}
                 </Link>

@@ -1,0 +1,29 @@
+Projects ive worked on:
+
+
+Source.plus:
+- was shut down due to lack of funding but the code was open sourced
+- I have screnshots and screen recordings of the UI
+- blurb: Source.Plus (source.plus) is a platform to curate and license AI training datasets. Built using React, Next.js, and TypeScript and is designed for performance, and robust search capabilities. It leverages a mix of server-side rendering (SSR), static site generation (SSG), and client-side interactions to deliver a seamless user experience.
+
+- architecture:
+ The application is built with a Next.js foundation, supporting both Edge and Node.js environments. It follows a modular architecture with state management handled through Redux Toolkit and persistent storage managed by Redux Persist. Built to support an Elastic search backend using the Elastic React Search UI library.
+
+Key functionalities include:
+
+State Management: Redux Toolkit for global state management.
+Authentication: Amazon Cognito for user authentication and session management.
+Search Engine Integration: ElasticSearch via @elastic/react-search-ui and elastic-builder for querying.
+UI Framework: A mix of MUI (Material-UI) components and custom madde design components for a consistent and accessible component library, .
+Form Handling: react-hook-form for streamlined form validation and submission.
+Performance Monitoring: Sentry for error tracking and application monitoring.
+Analytics: Mixpanel for user behavior tracking and analytics.
+Testing: Jest and Testing Library for unit and integration testing.
+
+
+Dundee Daily News 
+- https://github.com/annaliarosed/Dundee-daily-news
+- was made for the town of east dundee, IL to have a source for news for the residents. currently it is only on facebook.
+- my uncle who is a graphic designer designed it. 
+- it is a full stack app
+- was never released because it was decided to not be used.

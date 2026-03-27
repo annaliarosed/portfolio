@@ -25,6 +25,10 @@
   gap: 24px;
 }
 
+.actions {
+  margin: 0 !important;
+}
+
 @media (min-width: 1024px) {
   .headerGrid {
     gap: 40px;
@@ -276,5 +280,3 @@
     align-items: start;
   }
 }
-
-

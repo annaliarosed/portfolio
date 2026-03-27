@@ -1,5 +1,5 @@
 :root {
-  --background: #f4eddd;
+  --background: #FBF9F4;
   --secondary-background: #fcfaf7;
   --foreground: #443627;
   --green-primary: #5c946e;
@@ -7,7 +7,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #f4eddd; /* keep your current choice */
+    --background: #FBF9F4;
+    /* keep your current choice */
     --foreground: #443627;
   }
 }
@@ -48,6 +49,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 /* Accessible “visually hidden” utility */
@@ -89,7 +91,7 @@ body {
 }
 
 section[data-chapter] {
-  scroll-margin-top: 88px;
+  scroll-margin-top: 128px;
 }
 
 .k-title {
@@ -113,6 +115,9 @@ section[data-chapter] {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
+
+
   .scrollchapters-reveal {
     opacity: 1;
     transform: none;
@@ -121,4 +126,3 @@ section[data-chapter] {
     will-change: auto;
   }
 }
-
